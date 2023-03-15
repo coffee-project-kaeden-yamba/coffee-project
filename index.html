@@ -11,13 +11,57 @@
 <body>
 <div class="page-wrapper">
     <div class="container grow">
-        <!-- HEADER -->
-        <header class="row justify-center align-center text-center">
-            <h1>Coffee!</h1>
-        </header>
-        <div class="row justify-center align-center">
-            <hr class="header-line grow">
+        <div class="mobile-menu-container grow">
+            <div class="mobile-menu-overlay"></div>
+            <div class="mobile-menu-wrapper">
+                <!--      MENU ITEMS LIVE HERE      -->
+            </div>
         </div>
+        <!-- HEADER -->
+        <header class="row container justify-center align-center text-center" id="header">
+            <div class="row grow align-center header">
+                <div class="column">
+                    <h2 class="logo">Cafe Yamba</h2>
+                </div>
+                <div class="column">
+                    <nav class="navigation-wrapper">
+                        <div data-dropdown="parent" class="dropdown-parent">
+                            <div data-dropdown="toggle" class="dropdown-toggle">
+                                <p>MENU TOGGLE</p>
+                                <div data-dropdown="arrow" class="dropdown-arrow">
+                                    <img src="images/arrow.svg" class="arrow-icon" />
+                                </div>
+                            </div>
+                            <div data-dropdown="menu" class="dropdown-menu">
+                                <a href="#" title="menu item"><p>MENU ITEM</p></a>
+                                <a href="#" title="menu item"><p>MENU ITEM</p></a>
+                                <a href="#" title="menu item"><p>MENU ITEM</p></a>
+                            </div>
+                        </div>
+                        <div data-dropdown="parent" class="dropdown-parent">
+                            <div data-dropdown="toggle" class="dropdown-toggle">
+                                <p>MENU TOGGLE</p>
+                                <div data-dropdown="arrow" class="dropdown-arrow">
+                                    <img src="images/arrow.svg" class="arrow-icon" />
+                                </div>
+                            </div>
+                            <div data-dropdown="menu" class="dropdown-menu">
+                                <a href="#" title="menu item"><p>MENU ITEM</p></a>
+                                <a href="#" title="menu item"><p>MENU ITEM</p></a>
+                                <a href="#" title="menu item"><p>MENU ITEM</p></a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <div class="column shrink">
+                    <!--      HAMBURGER ICON          -->
+                    <div class="das-burger-wrapper">
+                        <div class="menu-line top"></div>
+                        <div class="menu-line middle"></div>
+                        <div class="menu-line bottom"></div>
+                    </div>
+                </div>
+        </header>
         <div class="row">
             <!-- COLUMN 1 COFFEE TABLE -->
             <div class="column">
@@ -48,7 +92,6 @@
                                 <input id="searchbar" onkeyup="renderCoffees()" type="text"
                                        name="search" placeholder="Search coffees..">
                             </div>
-                            <input class="button" id="submit" type="submit" />
                         </fieldset>
                     </form>
                 </div>
@@ -57,20 +100,18 @@
                     <form class="grow">
                         <fieldset>
                             <legend>Add a Coffee</legend>
-                            <label for="add-roast-selection"></label>
+                            <label for="newCoffeeRoast"></label>
                             <h3>Roast</h3>
-                            <select id="add-roast-selection">
-                                <option>all</option>
+                            <select id="newCoffeeRoast">
                                 <option>light</option>
                                 <option>medium</option>
                                 <option>dark</option>
                             </select>
                             <h3>Name</h3>
                             <div>
-                                <input id="searchbar" onkeyup="updateCoffees()" type="text"
-                                         name="search" placeholder="Search coffees..">
+                                <input id="newCoffeeName" type="text" placeholder="Type of Coffee">
                             </div>
-                            <input class="button" id="submit" type="submit" />
+                            <input class="button" id="submit" onclick="addCoffee()" type="submit" />
                         </fieldset>
                     </form>
                 </div>
