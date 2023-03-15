@@ -109,7 +109,8 @@
                             </select>
                             <h3>Name</h3>
                             <div>
-                                <input id="newCoffeeName" type="text" placeholder="Type of Coffee">
+                                <input id="newCoffeeName" onkeyup="filter()" type="text"
+                                         name="search" placeholder="Type of Coffee">
                             </div>
                             <input class="button" id="submit" onclick="addCoffee()" type="submit" />
                         </fieldset>

@@ -58,6 +58,7 @@ function renderCoffees(coffees) {
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     let selectedRoast = roastSelection.value;
+
     let filteredCoffees = [];
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast) {
@@ -69,9 +70,27 @@ function updateCoffees(e) {
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
+// Allow to search coffee by name
+
+let input = document.querySelector('#searchbar')
+input.addEventListener('keyup', filter)
+function filter() {
+    let inputQuery = document.querySelector('#searchbar').value.toLowerCase();
+    let filteredCoffees = [];
+    coffees.forEach(function (coffee) {
+        let name = coffee.name.toLowerCase();
+        if (name.includes(inputQuery))  {
+            filteredCoffees.push(coffee);
+        }
+    });
+    tbody.innerHTML = renderCoffees(filteredCoffees);
+}
+
+
 
 // COFFEES ARRAY
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
+
 let coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
     {id: 2, name: 'Half City', roast: 'light'},
