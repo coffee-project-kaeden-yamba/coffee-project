@@ -32,17 +32,17 @@ td, th {
     width: 100%;
 }
 
-.button {
-    border: darkblue;
-    color: white;
-    background-color: #1DA1F2;
-    cursor: pointer;
-    text-align: center;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 600;
-}
+/*.button {*/
+/*    border: darkblue;*/
+/*    color: white;*/
+/*    background-color: #1DA1F2;*/
+/*    cursor: pointer;*/
+/*    text-align: center;*/
+/*    display:flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    font-weight: 600;*/
+/*}*/
 
 .grid-container {
     display: grid;
@@ -64,7 +64,6 @@ td, th {
 
 }
 
-
 .coffee h2 {
  font-weight: bold;
 
@@ -73,5 +72,29 @@ td, th {
 .coffee p {
     font-weight: bold;
     color: gray;
+}
 
+.coffee-search {
+    border: 1px solid #000;
+    border-radius: 30px;
+}
+
+button {
+    color: white;
+    background-color: #0c87da;
+    display:flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 20px;
+}
+
+form {
+    width: 100%;
+}
+
+legend {
+    font-weight: 800;
 }
