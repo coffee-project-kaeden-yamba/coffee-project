@@ -21,29 +21,50 @@
         <div class="row">
             <!-- COLUMN 1 COFFEE TABLE -->
             <div class="column">
-
-<!--                    <thead>-->
-<!--                    <tr>-->
-<!--                        <th>NAME</th>-->
-<!--                        <th>ROAST</th>-->
-<!--                    </tr>-->
-<!--                    </thead>-->
-                    <div class="grid-container" id="coffees"> </div>
-
+                <div class="grid-container" id="coffees"> </div>
             </div>
             <!-- COLUMN 2 for FORM  -->
             <div class="column">
-                <form>
-                    <label for="roast-selection"></label>
-                    <select id="roast-selection">
-                        <option>all</option>
-                        <option>light</option>
-                        <option>medium</option>
-                        <option>dark</option>
-                        <option>all</option>
-                    </select>
-                    <input id="submit" type="submit" />
-                </form>
+                <div class="row">
+                    <h3>Roast</h3>
+                </div>
+                <div class="row">
+                    <form>
+                        <label for="roast-selection"></label>
+                        <select id="roast-selection">
+                            <option>light</option>
+                            <option>medium</option>
+                            <option>dark</option>
+                            <option>all</option>
+                        </select>
+                        <div>
+                            <h3>Coffee Name</h3>
+                        </div>
+                        <div>
+                            <input id="searchbar" onkeyup="renderCoffees()" type="text"
+                                   name="search" placeholder="Search coffees..">
+                        </div>
+                        <input class="button" id="submit" type="submit" />
+                    </form>
+                </div>
+
+                <div class="row text-center justify-center align-center">
+                    <h2>Add a Coffee</h2>
+                </div>
+                <div class="row">
+                    <h3>Roast</h3>
+                </div>
+                <div class="row">
+                    <p>search bar</p>
+                </div>
+                <div class="row">
+                    <h3>Name</h3>
+                </div>
+                <div class="row">
+                    <input id="searchbar" onkeyup="renderCoffees()" type="text"
+                           name="search" placeholder="Search coffees..">
+                </div>
+                <button>Submit</button>
             </div>
         </div>
     </div>

@@ -32,7 +32,7 @@ td, th {
     width: 100%;
 }
 
-input {
+.button {
     border: darkblue;
     color: white;
     background-color: #1DA1F2;
