@@ -33,6 +33,7 @@ function updateCoffees(e) {
     });
 
     tbody.innerHTML = renderCoffees(filteredCoffees);
+
 }
 
 
@@ -63,6 +64,9 @@ let tbody = document.querySelector('#coffees');
 let submitButton = document.querySelector('#submit');
 let roastSelection = document.querySelector('#roast-selection');
 
+let lightOption = document.querySelector('#roast-selection ');
+console.log(lightOption.value)
+lightOption.addEventListener('change', updateCoffees );
 
 tbody.innerHTML = renderCoffees(coffees);
 
