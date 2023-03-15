@@ -1,5 +1,6 @@
 "use strict"
 
+// Displays Coffee onh HTML by name and roast type
 function renderCoffee(coffee) {
     let html = '<div class="coffee">';
     html += '<h2>' + coffee.name + '</h2>';
@@ -9,6 +10,7 @@ function renderCoffee(coffee) {
     return html;
 }
 
+// Loops through the coffees array list
 function renderCoffees(coffees) {
     let html = '';
     for(let i = coffees.length - 1; i >= 0; i--) {
@@ -17,6 +19,7 @@ function renderCoffees(coffees) {
     return html;
 }
 
+// Allows your roast input to display coffees with that particular roast input
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     let selectedRoast = roastSelection.value;
@@ -24,6 +27,8 @@ function updateCoffees(e) {
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
+        } if (coffee.roast === 'all') {
+            filteredCoffees.push(coffee)
         }
     });
 
@@ -31,6 +36,8 @@ function updateCoffees(e) {
 
 }
 
+
+// COFFEES ARRAY
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 let coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
@@ -64,4 +71,5 @@ lightOption.addEventListener('change', updateCoffees );
 tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
+
 

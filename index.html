@@ -27,48 +27,53 @@
                 <div class="grid-container" id="coffees"> </div>
             </div>
             <!-- COLUMN 2 for FORM  -->
-            <div class="column">
-                <div class="row">
-                    <h3>Roast</h3>
-                </div>
-                <div class="row">
-                    <form>
-                        <label for="roast-selection"></label>
-                        <select id="roast-selection">
-                            <option value="all">all</option>
-                            <option value="light">light</option>
-                            <option value="medium">medium</option>
-                            <option value="dark">dark</option>
-
-                        </select>
-                        <div>
-                            <h3>Coffee Name</h3>
-                        </div>
-                        <div>
-                            <input id="searchbar" onkeyup="renderCoffees()" type="text"
-                                   name="search" placeholder="Search coffees..">
-                        </div>
-                        <input class="button" id="submit" type="submit" />
+            <!-- SEARCHING FOR COFFEE -->
+            <div class="column grow">
+                <div class="row grow">
+                    <form class="grow">
+                        <fieldset class="grow">
+                            <legend>Coffee Search</legend>
+                            <label for="roast-selection"></label>
+                            <h3>Roast</h3>
+                            <select id="roast-selection">
+                                  <option value="all">all</option>
+                                  <option value="light">light</option>
+                                  <option value="medium">medium</option>
+                                  <option value="dark">dark</option>
+                            </select>
+                            <div>
+                                <h3>Coffee Name</h3>
+                            </div>
+                            <div>
+                                <input id="searchbar" onkeyup="renderCoffees()" type="text"
+                                       name="search" placeholder="Search coffees..">
+                            </div>
+                            <input class="button" id="submit" type="submit" />
+                        </fieldset>
                     </form>
                 </div>
-
-                <div class="row text-center justify-center align-center">
-                    <h2>Add a Coffee</h2>
+                <!-- ADDING A NEW COFFEE TO THE ARRAY -->
+                <div class="row grow">
+                    <form class="grow">
+                        <fieldset>
+                            <legend>Add a Coffee</legend>
+                            <label for="add-roast-selection"></label>
+                            <h3>Roast</h3>
+                            <select id="add-roast-selection">
+                                <option>all</option>
+                                <option>light</option>
+                                <option>medium</option>
+                                <option>dark</option>
+                            </select>
+                            <h3>Name</h3>
+                            <div>
+                                <input id="searchbar" onkeyup="updateCoffees()" type="text"
+                                         name="search" placeholder="Search coffees..">
+                            </div>
+                            <input class="button" id="submit" type="submit" />
+                        </fieldset>
+                    </form>
                 </div>
-                <div class="row">
-                    <h3>Roast</h3>
-                </div>
-                <div class="row">
-                    <p>search bar</p>
-                </div>
-                <div class="row">
-                    <h3>Name</h3>
-                </div>
-                <div class="row">
-                    <input id="searchbar" onkeyup="renderCoffees()" type="text"
-                           name="search" placeholder="Search coffees..">
-                </div>
-                <button>Submit</button>
             </div>
         </div>
     </div>
