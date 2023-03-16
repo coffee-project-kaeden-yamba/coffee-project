@@ -11,42 +11,36 @@
 <div class="page-wrapper">
   <div class="container grow">
     <!-- HEADER -->
-
-    <header class="container justify-center align-center text-center header-background">
-      <div class="row grow align-center" >
+    <header class="row container justify-center align-center header-background">
+      <div class="row grow align-center justify-center" >
         <div class="column shrink">
-          <h1>Coffee!</h1>
+          <h1>Coffee</h1>
         </div>
       </div>
     </header>
-<!--    <div class="row justify-center align-center">-->
-<!--      <hr class="header-line grow">-->
-<!--    </div>-->
-    <div class="row" id="row-background">
+    <div class="row transition" id="row-background">
       <!-- COLUMN 1 COFFEE TABLE -->
       <div class="column">
-
         <!-- TABLE GENERATOR-->
-
         <div class="grid-container" id="coffees"> </div>
       </div>
       <!-- COLUMN 2 for FORM  -->
       <!-- SEARCHING FOR COFFEE -->
-      <div class="column grow">
+      <div class="column grow fieldset-gap">
         <div class="row grow">
           <form class="grow">
             <fieldset class="grow">
               <legend>Coffee Search</legend>
               <label for="roast-selection"></label>
-              <h3>Roast</h3>
+              <h3>Roast:</h3>
               <select id="roast-selection">
-                <option value="all">all</option>
-                <option value="light">light</option>
-                <option value="medium">medium</option>
-                <option value="dark">dark</option>
+                <option value="all">All</option>
+                <option value="light">Light</option>
+                <option value="medium">Medium</option>
+                <option value="dark">Dark</option>
               </select>
               <div>
-                <h3>Coffee Name</h3>
+                <h3>Coffee Name:</h3>
               </div>
               <div>
                 <input id="searchbar" onkeyup="renderCoffees()" type="text"
@@ -59,21 +53,20 @@
         <div class="row grow">
           <form class="grow">
             <fieldset>
-              <legend>Add a Coffee</legend>
-              <label for="add-roast-selection"></label>
-              <h3>Roast</h3>
-              <select id="add-roast-selection">
-                <option>all</option>
-                <option>light</option>
-                <option>medium</option>
-                <option>dark</option>
+              <legend>Add a Coffee:</legend>
+              <label for="newCoffeeRoast"></label>
+              <h3>Roast:</h3>
+              <select id="newCoffeeRoast">
+                <option>Light</option>
+                <option>Medium</option>
+                <option>Dark</option>
               </select>
-              <h3>Name</h3>
+              <h3>Name:</h3>
               <div>
                 <input id="newCoffeeName" onkeyup="filter()" type="text"
                        name="search" placeholder="Type of Coffee">
               </div>
-              <input class="button" id="submit" type="submit" />
+              <input class="button" id="submit" onclick="addCoffee()" type="submit" />
             </fieldset>
           </form>
         </div>

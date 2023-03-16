@@ -10,12 +10,6 @@
     --brown: #837066;
 }
 
-#borderimg1 {
-    border: 10px solid transparent;
-    padding: 15px;
-    border-image: url('/images/border.svg') 30 round;
-}
-
 .page-wrapper {
     font-family: Roboto, sans-serif;
     font-weight: 400;
@@ -25,20 +19,20 @@
 fieldset {
     background-color: var(--olive-green);
     border-radius: 20px;
-    border: 5px solid black
+    border: 1px solid black;
+    box-shadow: 0px 0px 8px 2px #000000;
+
 }
 
-#header {
-    max-width: 100%;
-    height: 100%;
-    width: 100%;
-    background-color:var(--off-black);
-    color: white;
-    z-index: 1;
-    position: sticky;
+input {
+    margin-bottom: 20px;
+    border:unset;
+}
+
+header {
     height: 100px;
     border-bottom: 1px black solid;
-    outline: unset  ;
+    outline: unset ;
     box-shadow: 0px 0px 8px 2px #000000;
 }
 
@@ -48,14 +42,15 @@ body {
     background-image: url("/images/coffee.jpeg");
     background-size: cover;
 }
-/*.container{*/
-/*    row-gap: unset;*/
-/*}*/
+
  #row-background {
-     /*background-color: #C7B9A9;*/
      background-image: url("/images/pexels-ylanite-koppens-796609.jpg");
      background-size: contain;
      padding-top: 20px;
+     padding-bottom: 20px;
+     border-radius: 10px;
+     box-shadow: 0px 0px 8px 2px #000000;
+
 
  }
 table {
@@ -66,64 +61,52 @@ table {
     width: 100%;
     border-radius: 20px;
 }
+
 #newCoffeeName {
     width: 100%;
     border-radius: 20px;
+}
 
+#newCoffeeRoast {
+    width: 100%;
+    border-radius: 20px;
 }
 
 #submit {
     width: 100%;
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: #C8BAAA;
-    color: white;
+    color: saddlebrown;
+    border: unset;
+    font-weight: 700;
 }
+
+#submit:hover {
+    background-color: #AC896C;
+    transition: all ease 2s;
+}
+
 #roast-selection {
     width: 100%;
     border-radius: 20px;
+}
 
 td, th {
     border: 1px solid black;
     padding: 5px 10px;
 }
-/*table {*/
-/*    border-collapse: collapse;*/
-/*    margin: 15px 0;*/
-/*}*/
 
-/*td, th {*/
-/*    border: 1px solid black;*/
-/*    padding: 5px 10px;*/
-/*}*/
 .header-background{
     background-color: #C8BAAA;
     padding: 20px;
 }
-.header-line {
-    width:50%;
-    color: #000;
-    border: 1px solid darkgrey;
-    width: 100%;
-}
-
-
-/*.button {*/
-/*    border: darkblue;*/
-/*    color: white;*/
-/*    background-color: #1DA1F2;*/
-/*    cursor: pointer;*/
-/*    text-align: center;*/
-/*    display:flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    font-weight: 600;*/
-/*}*/
 
 .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
 }
+
 .coffee {
 
     display: flex;
@@ -131,13 +114,24 @@ td, th {
     justify-content: start;
     align-items: baseline;
     gap: 5px;
-
+    background-color: var(--olive-green);
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px 2px #000000;;
 }
+
+legend {
+    color:white;
+    text-align: center;
+}
+
 h1 {
     color: saddlebrown;
 }
 
-.coffee h2 {
+.coffee h2, h3{
  font-weight: bold;
  color: navajowhite;
 }
@@ -166,5 +160,25 @@ button {
 
 form {
     width: 100%;
+}
+
+.fieldset-gap {
+    gap: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .transition {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: unset;
+    }
+    #row-background {
+        flex-direction: column;
+    }
+    fieldset {
+        /*margin: 10px;*/
+        padding: 30px 50px;
+        width: 100%;
+    }
 }
 
