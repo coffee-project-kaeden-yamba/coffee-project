@@ -36,7 +36,6 @@ function updateCoffees(e) {
 }
 
 // Allow to search coffee by name
-
 let input = document.querySelector('#searchbar')
 input.addEventListener('keyup', filter)
 function filter() {
@@ -89,16 +88,7 @@ tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
 
-// Create a query selector to gather information inputted into Add Coffee
-
-// Create a function to compile information into an object
-
-// Have it put the information into the array by ID number
-
-// Create a function to add that given object into the array
-
-
-
+// Adding a coffee object to an array through event listener
 function addCoffee() {
     let newCoffeeName = document.querySelector('#newCoffeeName').value;
     let newCoffeeRoast = document.querySelector('#newCoffeeRoast').value;
