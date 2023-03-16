@@ -33,6 +33,7 @@ header {
     border-bottom: 1px black solid;
     outline: unset ;
     box-shadow: 0px 0px 8px 2px #000000;
+    background-image: url("/coffee-project/images/coffee-background-texture.jpeg");
 }
 
 body {
@@ -83,7 +84,6 @@ table {
 
 #submit:hover {
     background-color: #AC896C;
-    transition: all ease 2s;
 }
 
 #submit:active {
@@ -134,7 +134,8 @@ legend {
 }
 
 h1 {
-    color: saddlebrown;
+    color: white;
+    font-weight: bold;
 }
 
 .coffee h2, h3{
