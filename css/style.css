@@ -1,8 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
-/*Brown, tan, olive green, black*/
-/*Brown, tan, olive green, black*/
+/*Color Theme: Brown, tan, olive green, black*/
 :root {
     --off-black: #313638;
     --tan: #F1D3B3;
@@ -79,11 +78,18 @@ table {
     color: saddlebrown;
     border: unset;
     font-weight: 700;
+    box-shadow: 0 9px var(--off-black);
 }
 
 #submit:hover {
     background-color: #AC896C;
     transition: all ease 2s;
+}
+
+#submit:active {
+    background-color: #AC896C;
+    box-shadow: 0 5px black;
+    transform: translateY(4px);
 }
 
 #roast-selection {
