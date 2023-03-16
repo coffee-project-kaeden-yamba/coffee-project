@@ -50,8 +50,6 @@ function filter() {
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
-
-
 // COFFEES ARRAY
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 
