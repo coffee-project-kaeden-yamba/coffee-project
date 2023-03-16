@@ -10,7 +10,14 @@
 <body>
 <div class="page-wrapper">
     <div class="container grow">
+        <div class="mobile-menu-container grow">
+            <div class="mobile-menu-overlay"></div>
+            <div class="mobile-menu-wrapper">
+                <!--      MENU ITEMS LIVE HERE      -->
+            </div>
+        </div>
         <!-- HEADER -->
+
         <header class="row justify-center align-center text-center header-background">
             <h1>Coffee!</h1>
         </header>
@@ -18,6 +25,15 @@
             <hr class="header-line grow">
         </div>
         <div class="row" id="row-background">
+
+        <header class="row container justify-center align-center text-center" id="header">
+            <div class="row grow align-center header">
+                <div class="column">
+                    <h2 class="logo">Cafe Yamba</h2>
+                </div>
+        </header>
+        <div class="row">
+
             <!-- COLUMN 1 COFFEE TABLE -->
             <div class="column">
 
@@ -55,10 +71,9 @@
                     <form class="grow">
                         <fieldset>
                             <legend>Add a Coffee</legend>
-                            <label for="add-roast-selection"></label>
+                            <label for="newCoffeeRoast"></label>
                             <h3>Roast</h3>
-                            <select id="add-roast-selection">
-                                <option>all</option>
+                            <select id="newCoffeeRoast">
                                 <option>light</option>
                                 <option>medium</option>
                                 <option>dark</option>
@@ -68,7 +83,7 @@
                                 <input id="newCoffeeName" onkeyup="filter()" type="text"
                                          name="search" placeholder="Type of Coffee">
                             </div>
-                            <input class="button" id="submit" type="submit" />
+                            <input class="button" id="submit" onclick="addCoffee()" type="submit" />
                         </fieldset>
                     </form>
                 </div>
