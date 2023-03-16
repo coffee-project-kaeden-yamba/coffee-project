@@ -42,18 +42,50 @@ fieldset {
     box-shadow: 0px 0px 8px 2px #000000;
 }
 
+body {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    background-image: url("/images/coffee.jpeg");
+    background-size: cover;
+}
+/*.container{*/
+/*    row-gap: unset;*/
+/*}*/
+ #row-background {
+     /*background-color: #C7B9A9;*/
+     background-image: url("/images/pexels-ylanite-koppens-796609.jpg");
+     background-size: contain;
+     padding-top: 20px;
+
+ }
 table {
     border-collapse: collapse;
     margin: 15px 0;
 }
+#searchbar {
+    width: 100%;
+    border-radius: 20px;
+}
+#newCoffeeName {
+    width: 100%;
+    border-radius: 20px;
 
+}
 
+#submit {
+    width: 100%;
+    border-radius: 5px;
+    background-color: #C8BAAA;
+    color: white;
+}
+#roast-selection {
+    width: 100%;
+    border-radius: 20px;
 
 td, th {
     border: 1px solid black;
     padding: 5px 10px;
 }
-
 /*table {*/
 /*    border-collapse: collapse;*/
 /*    margin: 15px 0;*/
@@ -63,14 +95,17 @@ td, th {
 /*    border: 1px solid black;*/
 /*    padding: 5px 10px;*/
 /*}*/
-
-
+.header-background{
+    background-color: #C8BAAA;
+    padding: 20px;
+}
 .header-line {
     width:50%;
     color: #000;
     border: 1px solid darkgrey;
     width: 100%;
 }
+
 
 /*.button {*/
 /*    border: darkblue;*/
@@ -89,7 +124,6 @@ td, th {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
 }
-
 .coffee {
 
     display: flex;
@@ -99,18 +133,22 @@ td, th {
     gap: 5px;
 
 }
+h1 {
+    color: saddlebrown;
+}
 
 .coffee h2 {
  font-weight: bold;
+ color: navajowhite;
 }
 
 .coffee p {
     font-weight: bold;
-    color: gray;
+    color: white;
 }
 
 .coffee-search {
-    border: 1px solid #000;
+    border: 1px solid #C8BAAA;
     border-radius: 30px;
 }
 
@@ -129,10 +167,4 @@ button {
 form {
     width: 100%;
 }
-
-legend {
-    font-weight: 800;
-}
-
-
 
