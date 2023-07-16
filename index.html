@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +22,7 @@
         <div class="row">
             <!-- COLUMN 1 COFFEE TABLE -->
             <div class="column">
-            <!-- TABLE GENERATOR-->
+                <!-- TABLE GENERATOR-->
                 <div class="grid-container" id="coffees"> </div>
             </div>
             <!-- COLUMN 2 for FORM  -->
@@ -35,18 +34,18 @@
                             <legend>Coffee Search</legend>
                             <label for="roast-selection"></label>
                             <h3>Roast</h3>
-                            <select id="roast-selection">
-                                  <option value="all">all</option>
-                                  <option value="light">light</option>
-                                  <option value="medium">medium</option>
-                                  <option value="dark">dark</option>
+                            <select id="roast-selection" class="styled-input">
+                                <option value="all">all</option>
+                                <option value="light">light</option>
+                                <option value="medium">medium</option>
+                                <option value="dark">dark</option>
                             </select>
                             <div>
                                 <h3>Coffee Name</h3>
                             </div>
                             <div>
                                 <input id="searchbar" onkeyup="renderCoffees()" type="text"
-                                       name="search" placeholder="Search coffees..">
+                                       name="search" placeholder="Search coffees.." class="styled-input">
                             </div>
                         </fieldset>
                     </form>
@@ -58,7 +57,7 @@
                             <legend>Add a Coffee</legend>
                             <label for="newCoffeeRoast"></label>
                             <h3>Roast</h3>
-                            <select id="newCoffeeRoast">
+                            <select id="newCoffeeRoast" class="styled-input">
                                 <option>light</option>
                                 <option>medium</option>
                                 <option>dark</option>
@@ -66,7 +65,7 @@
                             <h3>Name</h3>
                             <div>
                                 <input id="newCoffeeName" onkeyup="filter()" type="text"
-                                         name="search" placeholder="Type of Coffee">
+                                       name="search" placeholder="Type of Coffee" class="styled-input">
                             </div>
                             <input class="button" id="submit" type="submit" />
                         </fieldset>
@@ -76,6 +75,6 @@
         </div>
     </div>
 </div>
-    <script src="main.js"></script>
+<script src="main.js"></script>
 </body>
 </html>

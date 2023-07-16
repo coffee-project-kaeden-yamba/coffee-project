@@ -8,7 +8,17 @@
     --olive-green: #87805F;
     --brown: #837066;
     --olive-opacity: rgba(135, 128, 95, 0.8);
+    --input-background: rgb(17,15,21,0.8)
 }
+
+.styled-input {
+    padding: 5px 10px;
+    margin-left: 5px;
+    background-color: var(--input-background);
+    border: 1px solid navajowhite;
+    color: white;
+}
+
 
 .page-wrapper {
     font-family: Roboto, sans-serif;
