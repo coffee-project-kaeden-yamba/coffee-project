@@ -1,6 +1,7 @@
+
 "use strict"
 
-// Displays Coffee onh HTML by name and roast type
+// Displays Coffee on HTML by name and roast type
 function renderCoffee(coffee) {
     let html = '<div class="coffee">';
     html += '<h2>' + coffee.name + '</h2>';
@@ -13,7 +14,7 @@ function renderCoffee(coffee) {
 // Loops through the coffees array list
 function renderCoffees(coffees) {
     let html = '';
-    for(let i = coffees.length - 1; i >= 0; i--) {
+    for (let i = coffees.length - 1; i >= 0; i--) {
         html += renderCoffee(coffees[i]);
     }
     return html;
@@ -25,25 +26,26 @@ function updateCoffees(e) {
     let selectedRoast = roastSelection.value;
 
     let filteredCoffees = [];
-    coffees.forEach(function(coffee) {
+    coffees.forEach(function (coffee) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
-        } if (selectedRoast === 'all') {
-            filteredCoffees.push(coffee)
+        }
+        if (selectedRoast === 'all') {
+            filteredCoffees.push(coffee);
         }
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 
 // Allow to search coffee by name
-let input = document.querySelector('#searchbar')
-input.addEventListener('keyup', filter)
+let input = document.querySelector('#searchbar');
+input.addEventListener('keyup', filter);
 function filter() {
     let inputQuery = document.querySelector('#searchbar').value.toLowerCase();
     let filteredCoffees = [];
     coffees.forEach(function (coffee) {
         let name = coffee.name.toLowerCase();
-        if (name.includes(inputQuery))  {
+        if (name.includes(inputQuery)) {
             filteredCoffees.push(coffee);
         }
     });
@@ -52,25 +54,24 @@ function filter() {
 
 // COFFEES ARRAY
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
-
 let coffees = [
-    {id: 1, name: 'Light City', roast: 'light'},
-    {id: 2, name: 'Half City', roast: 'light'},
-    {id: 3, name: 'Cinnamon', roast: 'light'},
-    {id: 4, name: 'City', roast: 'medium'},
-    {id: 5, name: 'American', roast: 'medium'},
-    {id: 6, name: 'Breakfast', roast: 'medium'},
-    {id: 7, name: 'High', roast: 'dark'},
-    {id: 8, name: 'Continental', roast: 'dark'},
-    {id: 9, name: 'New Orleans', roast: 'dark'},
-    {id: 10, name: 'European', roast: 'dark'},
-    {id: 11, name: 'Espresso', roast: 'dark'},
-    {id: 12, name: 'Viennese', roast: 'dark'},
-    {id: 13, name: 'Italian', roast: 'dark'},
-    {id: 14, name: 'French', roast: 'dark'},
+    { id: 1, name: 'Light City', roast: 'light' },
+    { id: 2, name: 'Half City', roast: 'light' },
+    { id: 3, name: 'Cinnamon', roast: 'light' },
+    { id: 4, name: 'City', roast: 'medium' },
+    { id: 5, name: 'American', roast: 'medium' },
+    { id: 6, name: 'Breakfast', roast: 'medium' },
+    { id: 7, name: 'High', roast: 'dark' },
+    { id: 8, name: 'Continental', roast: 'dark' },
+    { id: 9, name: 'New Orleans', roast: 'dark' },
+    { id: 10, name: 'European', roast: 'dark' },
+    { id: 11, name: 'Espresso', roast: 'dark' },
+    { id: 12, name: 'Viennese', roast: 'dark' },
+    { id: 13, name: 'Italian', roast: 'dark' },
+    { id: 14, name: 'French', roast: 'dark' },
 ];
 // Sort coffees by id in ascending order
-coffees.sort(function(a, b) {
+coffees.sort(function (a, b) {
     return a.id - b.id;
 });
 
@@ -78,23 +79,34 @@ let tbody = document.querySelector('#coffees');
 let submitButton = document.querySelector('#submit');
 let roastSelection = document.querySelector('#roast-selection');
 
-let lightOption = document.querySelector('#roast-selection ');
-console.log(lightOption.value)
-lightOption.addEventListener('change', updateCoffees );
+roastSelection.addEventListener('change', updateCoffees);
 
 tbody.innerHTML = renderCoffees(coffees);
 
-submitButton.addEventListener('click', updateCoffees);
-
-// Adding a coffee object to an array through event listener
 function addCoffee() {
-    let newCoffeeName = document.querySelector('#newCoffeeName').value;
-    let newCoffeeRoast = document.querySelector('#newCoffeeRoast').value;
-    let coffee = {id: coffees.length + 1, name: newCoffeeName, roast: newCoffeeRoast}
+    let newCoffeeName = document.querySelector('#newCoffeeName').value.trim();
+    let newCoffeeRoast = document.querySelector('#newCoffeeRoast').value.trim();
+
+    if (newCoffeeName === '' || newCoffeeRoast === '') {
+        alert('Please input a valid coffee name and roast');
+        return;
+    }
+
+    let coffee = {
+        id: coffees.length + 1,
+        name: newCoffeeName,
+        roast: newCoffeeRoast,
+    };
+
+    coffees.push(coffee);
+    console.log('Coffees array:', coffees);
+    tbody.innerHTML = renderCoffees(coffees);
     document.querySelector('#newCoffeeName').value = '';
     document.querySelector('#newCoffeeRoast').value = '';
-    coffees.push(coffee);
-    console.log('Coffees array: ', coffees)
 }
 
-document.querySelector('#submit').addEventListener('click',addCoffee)
+submitButton.addEventListener('click', (e) => {
+    e.preventDefault(); // Prevent form submission
+    addCoffee();
+    filter();
+});

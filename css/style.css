@@ -7,16 +7,16 @@
     --tan: #F1D3B3;
     --olive-green: #87805F;
     --brown: #837066;
+    --olive-opacity: rgba(135, 128, 95, 0.8);
 }
 
 .page-wrapper {
     font-family: Roboto, sans-serif;
     font-weight: 400;
-    background-image: url(“/coffee-project/images/coffee-beans.jpg”);
 }
 
 fieldset {
-    background-color: var(--olive-green);
+    background-color: var(--olive-opacity);
     border-radius: 20px;
     border: 1px solid black;
     box-shadow: 0px 0px 8px 2px #000000;
@@ -28,31 +28,63 @@ input {
     border:unset;
 }
 
+/*header {*/
+/*    height: 100px;*/
+/*    border-bottom: 1px black solid;*/
+/*    outline: unset ;*/
+/*    box-shadow: 0px 0px 8px 2px #000000;*/
+/*    background-image: url("/images/dark-wood.jpg") ;*/
+/*}*/
+
+/*.main-content {*/
+/*    background-image: url("/images/coffee-shop-background.jpg");*/
+/*    background-size: 100%;*/
+/*    background-repeat: no-repeat;*/
+/*    min-height: 100vh; !* Ensure the background covers the entire viewport height *!*/
+/*}*/
+
+.main-content {
+    background-image: url("../images/coffee-shop-background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
 header {
     height: 100px;
     border-bottom: 1px black solid;
-    outline: unset ;
+    outline: unset;
     box-shadow: 0px 0px 8px 2px #000000;
-    background-image: url("/coffee-project/images/coffee-background-texture.jpeg");
+    background-image: url("../images/dark-wood.jpg");
+}
+
+#row-background {
+    background-image: url("../images/pexels-ylanite-koppens-796609.jpg");
+    background-size: contain;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px 2px #000000;
 }
 
 body {
     font-family: Roboto, sans-serif;
     font-weight: 400;
-    background-image: url("/images/coffee.jpeg");
-    background-size: cover;
+    background-image: url("/images/coffee-shop-background.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    min-height: 100vh; /* Ensure the background covers the entire viewport height */
 }
 
- #row-background {
-     background-image: url("/images/pexels-ylanite-koppens-796609.jpg");
-     background-size: contain;
-     padding-top: 20px;
-     padding-bottom: 20px;
-     border-radius: 10px;
-     box-shadow: 0px 0px 8px 2px #000000;
+ /*#row-background {*/
+ /*    background-image: url("/images/pexels-ylanite-koppens-796609.jpg");*/
+ /*    background-size: contain;*/
+ /*    padding-top: 20px;*/
+ /*    padding-bottom: 20px;*/
+ /*    border-radius: 10px;*/
+ /*    box-shadow: 0px 0px 8px 2px #000000;*/
+ /*}*/
 
-
- }
 table {
     border-collapse: collapse;
     margin: 15px 0;
@@ -105,32 +137,42 @@ td, th {
 .header-background{
     background-color: #C8BAAA;
     padding: 20px;
+
+
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
+    overflow: auto;
+    height: 400px;
+    padding: 20px
 }
 
 .coffee {
-
     display: flex;
     flex-direction: row;
     justify-content: start;
     align-items: baseline;
     gap: 5px;
-    background-color: var(--olive-green);
+    background-color: var(--olive-opacity);
     border: 1px solid black;
     padding: 10px;
     text-align: center;
     border-radius: 10px;
     box-shadow: 0px 0px 8px 2px #000000;;
+    transition: all ease .3s;
+}
+
+.coffee:hover {
+    transform: scale(1.1);
 }
 
 legend {
-    color:white;
+    color: navajowhite;
     text-align: center;
+    font-size: 15px
 }
 
 h1 {
@@ -146,6 +188,7 @@ h1 {
 .coffee p {
     font-weight: bold;
     color: white;
+    font-size: 15px;
 }
 
 .coffee-search {
@@ -173,6 +216,14 @@ form {
     gap: 20px;
 }
 
+.top-container {
+    background-color: #3F3F3F;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    color: navajowhite ;
+    border: 2px solid var(--olive-green)
+}
+
 @media screen and (max-width: 768px) {
     .transition {
         display: flex;
@@ -180,7 +231,7 @@ form {
         flex-wrap: unset;
     }
     #row-background {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
     fieldset {
         /*margin: 10px;*/
